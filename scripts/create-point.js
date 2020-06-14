@@ -53,16 +53,44 @@ for (item of itemsToCollect) {
     item.addEventListener("click", handleSelectedItem)
 }
 
+const collectedItems = document.querySelector("input[name=items]")
+
 let selectedItems = []
 
 function handleSelectedItem(event) {
+
     const itemLi = event.target
+
     // adcionar ou remover uma classe com javascript
+
     itemLi.classList.toggle("selected")
 
     const itemId = itemLi.dataset.id
 
-    // verificar se existe itens selecionados
+    // verificar se existe itens selecionados 
+    // pegar itens selecionados
 
+    const alreadySelected = selectedItems.findIndex(item => {
+        const itemFound = item == itemId // isso sera true ou false
+        return itemFound
+    })
+
+    // se ja estiver selecionado, tirar da seleção
+    if (alreadySelected >= 0) {
+        // tirar da seleção
+        const filteredItems = selectedItems.filter(item => {
+            const itemIsDifferent = item != itemId // false
+            return itemIsDifferent
+        })
+
+        selectedItems = filteredItems
+    } else {
+        // se não tiver selecionado
+        // adicionar a da seleção
+        selectedItems.push(itemId)
+    }
+
+    // atualizar campo escondido com os itens selecionados
+    collectedItems.value = selectedItems
 
 }
