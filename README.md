@@ -11,4 +11,4 @@ Quando esteja no diretorio do projeto, execute o comando "npm start" no terminal
 ### Front-end
 hrml, css e javaScript
 ### Back-end
-JavaScript, nodeJS e sqlite
+JavaScript, nodeJS e sqlite3

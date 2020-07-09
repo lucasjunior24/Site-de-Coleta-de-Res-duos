@@ -21,7 +21,7 @@ nunjucks.configure("src/views", {
 
 
 // configurar caminhos da minha aplicação
-// pagina princial - home
+// pagina princial = home
 // req = requisição
 // res = resposta
 
